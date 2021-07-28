@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_expense_pie_chart/neumorphic_expenses/pie_chart.dart';
 
-class CategoriesRow extends StatelessWidget {
+class CategoriesPriceRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      flex: 3,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          for (var category in kCategories)
-            ExpenseCategory(
-                text: category.name, index: kCategories.indexOf(category))
+        return Expanded(
+          flex: 3,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              for (var category in kCategories)
+                ExpenseCategory(
+                    amount: category.amount, index: kCategories.indexOf(category))
         ],
       ),
     );
@@ -22,11 +22,11 @@ class CategoriesRow extends StatelessWidget {
 class ExpenseCategory extends StatelessWidget {
   const ExpenseCategory({
     required this.index,
-    required this.text,
+    required this.amount,
   });
 
   final int index;
-  final String text;
+  final double amount;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -43,15 +43,9 @@ class ExpenseCategory extends StatelessWidget {
             ),
           ),
           SizedBox(width: 20),
-          Text(text.capitalize()),
+          Text(amount.toString()),
         ],
       ),
     );
-  }
-}
-
-extension StringExtension on String {
-  String capitalize() {
-    return "${this[0].toUpperCase()}${this.substring(1)}";
   }
 }

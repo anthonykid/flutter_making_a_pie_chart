@@ -43,7 +43,7 @@ class PieChartView extends StatelessWidget {
               ),
               Center(
                 child: Container(
-                  height: constraint.maxWidth * 0.4,
+                  height: constraint.maxWidth * 0.55,
                   decoration: BoxDecoration(
                     color: Color.fromRGBO(193, 214, 233, 1),
                     shape: BoxShape.circle,
@@ -65,11 +65,11 @@ class PieChartView extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Total',style: TextStyle(fontWeight: FontWeight.bold)),
+                        Text('Total',style: TextStyle(fontWeight: FontWeight.w400)),
                       
-                        Text('\$1280.20'),
+                        Text('\Rp.1.000.000',style: TextStyle(fontWeight: FontWeight.bold)),
                         
-                        Text('Pada Bulan Januari')
+                        Text('Pada Bulan Jan')
                       ],
                     ),
                   ),
