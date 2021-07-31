@@ -37,42 +37,35 @@ class MontlyExpensesView extends StatelessWidget {
                               Spacer(),
                               PieChartView(),
                               Spacer(),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    children: [
-                                      Text('Kategori'),
-                                      //CategoriesRow()
-                                    ],
-                                  ),
-                                  Column(
-                                    children: [
-                                      //Text('Jumlah'),
-                                      //CategoriesPriceRow()
-                                    ],
-                                  ),
-                                ],
+                              Container(
+                                height: 250,
+                                width: 250,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        children: [
+                                          Text('Kategori'),
+                                          CategoriesRow()
+                                        ],
+                                      ),
+                                    ),
+                                    Container(
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.end,
+                                        
+                                        children: [
+                                          Text('Jumlah'),
+                                          CategoriesPriceRow()
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                              CategoriesRow(),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    children: [
-                                      Text('Jumlah'),
-                                    ],
-                                  ),
-                                  Column(
-                                    children: [
-                                      //
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              CategoriesPriceRow()
                             ],
                           ),
                         ),
